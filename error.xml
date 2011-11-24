@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<srfil>
+  <warning sigle="nolog">
+    <nom>Le fichier de log indiqué n'existe pas</nom>
+    <desc>Le fichier de log indiqué n'existe pas ou son nom est incorrect. Veuillez vérifier que le nom du fichier est correcte</desc>
+  </warning>
+</srfil>

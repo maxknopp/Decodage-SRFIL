@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>Décodage SRFIL</title>
+	<link rel="shortcut icon" href="favicon.ico" />
+	<link rel="stylesheet" href="style.css" type="text/css"/>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	
+	<!-- Script d'upload du fichier de log -->
+	<script type="text/javascript" src="srfil.js"></script>
+
+</head>
+
+<body>
+  <div id="header">
+    <h1><a href="http://srfil.maxk.fr">Décodage SRFIL</a></h1>
+  </div>
+  <div id="content">
+    <div class="champs">
+      <h3>Outil de décodage des log SRFIL</h3>
+      <p>Cet outil permet de décoder un log SRFIL exécuté en mode debug.</p>
+      <p>Pour décoder un log, vous pouvez soit envoyer un fichier texte contenant les log via le bouton ci-dessous, soit copier/coller le résultat de la commande dans le formulaire plus bas.</p>
+      <p>Pour utiliser cet outil vous devez utiliser soit IE version 8 minimum soit Firefox version 3 minimum ou Chrome. Javascript doit également être activé.</p>
+    </div>
+    
+   <div class="champs">
+      <h3>Envoi d'un fichier de log</h3>
+      <p>Cliquer sur le bouton ci-dessous pour envoyer un fichier de log au format texte</p>
+			<form class="msgsrfil" action="upload.php" method="post" enctype="multipart/form-data" target="file_upload_target" onsubmit="fileUpload();" >
+				<p id="file_upload_send">Envoi en cours<br/><img src="image/roue_2.gif" alt="Wait..."/><br/></p>
+				<p id="file_upload_decode">Décodage en cours<br/><img src="image/roue_2.gif" alt="Wait..."/><br/></p>
+				<p id="file_upload_error">Une erreur s'est produite durant le transfert</p>
+				<p id="file_upload" >
+					<input name="myfile" type="file" size="61" /><br /><br />
+					<input type="submit" name="send" class="send" value="" />
+				</p>
+				<iframe id="file_upload_target" name="file_upload_target" src="" ></iframe>
+				</form>
+   </div>
+   
+   <div class="champs">
+      <h3>Envoi d'un message SRFIL</h3>
+      <p>Coller dans le formulaire ci-dessous le log d'une commande SRFIL</p>
+      <form class="msgsrfil" action="save.php" method="post" enctype="multipart/form-data" target="text_upload_target" onsubmit="textUpload();">
+				<p id="text_upload_send">Envoi en cours<br/><img src="image/roue_2.gif" alt="Wait..."/><br/></p>
+				<p id="text_upload_decode">Décodage en cours<br/><img src="image/roue_2.gif" alt="Wait..." /><br/></p>
+				<p id="text_upload_error">Le message envoyé était vide</p>
+        <p id="text_upload">
+        	<textarea rows="12" cols="74" name="message"></textarea><br /><br />
+        	<input type="submit" class="send" name="send" value="" />
+        </p>
+        <iframe id="text_upload_target" name="text_upload_target" src="" ></iframe>
+      </form>
+   </div>
+   
+   <div class="champs">
+      <p>
+      	Outil développé par Maximilien Knopp. Pour toute question, vous pouvez me contacter à maximilien[at]maxk.fr
+      	<span class="right"><a href="http://srfil.maxk.fr/visite.php">Historique des analyses</a></span>
+      </p>
+   </div>
+  </div>
+</body>
+
+</html>
